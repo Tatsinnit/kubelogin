@@ -74,3 +74,5 @@ jobs:
         tag_name : "v${{ steps.changelog_reader.outputs.version }}"
         name: "v${{ steps.changelog_reader.outputs.version }} release" # following the pattern of vx.x.xx release used in this repo
         body: ${{ steps.changelog_reader.outputs.changes }}
+        files: |
+          ./bin/*
