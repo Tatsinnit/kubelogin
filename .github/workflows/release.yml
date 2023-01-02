@@ -49,52 +49,6 @@ jobs:
         GOOS: windows
         GOARCH: amd64
       run: make
-
-    - name: Zip
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq -r kubelogin.zip bin
-
-    - name: Zip (win-amd64)
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq kubelogin-win-amd64.zip bin/windows_amd64/kubelogin.exe
-
-    - name: Zip (darwin-amd64)
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq kubelogin-darwin-amd64.zip bin/darwin_amd64/kubelogin
-
-    - name: Zip (darwin-arm64)
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq kubelogin-darwin-arm64.zip bin/darwin_arm64/kubelogin
-
-    - name: Zip (linux-amd64)
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq kubelogin-linux-amd64.zip bin/linux_amd64/kubelogin
-
-    - name: Zip (linux-arm64)
-      uses: montudor/action-zip@v1
-      with:
-        args: zip -qq kubelogin-linux-arm64.zip bin/linux_arm64/kubelogin
-
-    - name: Create sha256 Checksums
-      run: |
-        sha256sum kubelogin.zip > kubelogin.zip.sha256
-        sha256sum kubelogin-win-amd64.zip > kubelogin-win-amd64.zip.sha256
-        sha256sum kubelogin-darwin-amd64.zip > kubelogin-darwin-amd64.zip.sha256
-        sha256sum kubelogin-darwin-arm64.zip > kubelogin-darwin-arm64.zip.sha256
-        sha256sum kubelogin-linux-amd64.zip > kubelogin-linux-amd64.zip.sha256
-        sha256sum kubelogin-linux-arm64.zip > kubelogin-linux-arm64.zip.sha256
-
-    - name: Publish
-      uses: skx/github-action-publish-binaries@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        args: kubelogin.zip kubelogin-win-amd64.zip kubelogin-darwin-amd64.zip kubelogin-darwin-arm64.zip kubelogin-linux-amd64.zip kubelogin-linux-arm64.zip kubelogin.zip.sha256 kubelogin-win-amd64.zip.sha256 kubelogin-darwin-amd64.zip.sha256 kubelogin-darwin-arm64.zip.sha256 kubelogin-linux-amd64.zip.sha256 kubelogin-linux-arm64.zip.sha256
     # Read changelog and read versions etc.
     - name: Check version is mentioned in Changelog.md
       id: changelog_reader
