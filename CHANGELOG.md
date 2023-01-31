@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.0.126
+## [0.0.126]
 
 ### Whats Changed
 
