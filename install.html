@@ -156,6 +156,20 @@ brew install Azure/kubelogin/kubelogin
 brew update
 brew upgrade Azure/kubelogin/kubelogin
 </code></pre>
+<h2 id="linux"><a class="header" href="#linux">Linux</a></h2>
+<h3 id="using-asdf"><a class="header" href="#using-asdf">Using <a href="https://asdf-vm.com/">asdf</a></a></h3>
+<p><em>asdf and the asdf-kubelogin plugin are not maintained by Microsoft.</em></p>
+<pre><code class="language-sh"># install
+asdf plugin add kubelogin
+asdf install kubelogin latest
+asdf global kubelogin latest
+
+# upgrade
+asdf update
+asdf plugin update kubelogin
+asdf install kubelogin latest
+asdf global kubelogin latest
+</code></pre>
 <h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
 <h3 id="using-winget"><a class="header" href="#using-winget">Using winget</a></h3>
 <p>From Powershell:</p>
@@ -163,8 +177,14 @@ brew upgrade Azure/kubelogin/kubelogin
 winget install --id=Microsoft.Azure.Kubelogin  -e
 </code></pre>
 <h3 id="using-scoop"><a class="header" href="#using-scoop">Using scoop</a></h3>
+<p>This package is not maintained by Microsoft.</p>
 <p>From Powershell:</p>
 <pre><code class="language-powershell">scoop install kubectl azure-kubelogin
+</code></pre>
+<h3 id="using-chocolatey"><a class="header" href="#using-chocolatey">Using chocolatey</a></h3>
+<p>This package is not maintained by Microsoft.</p>
+<p>From Powershell:</p>
+<pre><code class="language-powershell">choco install kubernetes-cli azure-kubelogin
 </code></pre>
 <h3 id="using-azure-cli"><a class="header" href="#using-azure-cli">Using azure cli</a></h3>
 <p>From Powershell:</p>
